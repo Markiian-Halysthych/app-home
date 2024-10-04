@@ -7,7 +7,7 @@
 
 <script>
 export default {
-  name: 'Header'
+  name: 'AppHeader'
 }
 </script>
 
@@ -18,7 +18,6 @@ export default {
   align-self: center;
   padding: 10px;
   margin-bottom: 10px;
-  /* border-radius: 10px; */
 }
 
 .title{

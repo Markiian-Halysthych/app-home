@@ -1,16 +1,22 @@
 <template>
   <div id="app">
-    <Header></Header>
+    <AppHeader></AppHeader>
+    <AppSearchBar></AppSearchBar>
+    <InboxComponent></InboxComponent>
   </div>
 </template>
 
 <script>
-import Header from './components/Header.vue'
+import AppHeader from './components/AppHeader.vue'
+import AppSearchBar from './components/SearchBar.vue';
+import InboxComponent from './components/InboxComponent.vue';
 
 export default {
   name: 'App',
   components: {
-    Header
+    AppHeader,
+    AppSearchBar,
+    InboxComponent,
   }
 }
 </script>
