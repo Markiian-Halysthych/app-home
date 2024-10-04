@@ -15,6 +15,9 @@ export default {
 }
 </script>
 
-<style>
-
+<style scoped>
+#app{
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 10px;
+}
 </style>

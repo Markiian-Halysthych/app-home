@@ -20,4 +20,20 @@ export default {
   margin-bottom: 10px;
   /* border-radius: 10px; */
 }
+
+.title{
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.add-button{
+  border-radius: 5px;
+  border: none;
+  background-color: #3172D5;
+  color: white;
+}
+
+.add-button:hover{
+  background-color: #245db3;
+}
 </style>
