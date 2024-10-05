@@ -21,7 +21,8 @@ export default {
     display: flex;
     border: none;
     border-radius: 5px;
-    background-color: hsl(0, 0%, 85%);
+    background-color: hsl(0, 0%, 88%);
+    padding: 5px;
     width: 100%;
 }
 </style>
