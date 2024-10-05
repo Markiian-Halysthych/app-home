@@ -1,6 +1,6 @@
 <template>
   <header class="header">
-    <div class="title">Hub Cockpit</div>
+    <div class="title"><img class="logo-img" src="@/assets/logo.png"/> Hub Cockpit</div>
     <button class="add-button">+ New</button>
   </header>
 </template>
@@ -34,5 +34,9 @@ export default {
 
 .add-button:hover{
   background-color: #245db3;
+}
+.logo-img {
+  max-width: 17px;
+  height: auto;
 }
 </style>
