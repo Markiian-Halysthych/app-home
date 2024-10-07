@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" :class="{dark: isActive}">
     <AppHeader></AppHeader>
     <AppSearchBar></AppSearchBar>
     <InboxComponent></InboxComponent>
@@ -26,12 +26,42 @@ export default {
     OutboxComponent,
     OthersComponent,
     BottomNav,
+  },
+  data() {
+    return {
+      isActive: false
+    };
+  },
+  methods: {
+    toggleStyle() {
+      this.isActive = !this.isActive;
+    }
+  },
+  provide() {
+    return {
+      isActive: this.$data.isActive,
+      toggleStyle: this.toggleStyle
+    }
+  },
+  watch: {
+    isActive(newValue) {
+      this.$root.$emit('toggle-style', newValue);
+    }
   }
 }
 </script>
 
 <style scoped>
-#app{
+
+#app {
   font-family: Arial, Helvetica, sans-serif;
+  background-color: hsl(0, 0%, 96%);
+  min-height: 100vh;
+  transition: background-color 0.5s ease;
+  padding-bottom: 7vh;
+}
+#app.dark {
+  background-color: hsl(219, 68%, 10%);
+  color: white;
 }
 </style>

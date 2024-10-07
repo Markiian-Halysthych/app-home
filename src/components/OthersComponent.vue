@@ -3,14 +3,14 @@
         <div class="section-title">
             <span>OTHERS</span>
         </div>
-        <div class="messages">
-            <div class="other-messages">
+        <div id="messages" :class="{dark: isActive}">
+            <div class="other-messages" :class="{dark: isActive}">
                 <span><a href="">Favorites</a></span>
             </div>
-            <div class="other-messages">
+            <div class="other-messages" :class="{dark: isActive}">
                 <span><a href="">Spaces</a></span>
             </div>
-            <div class="other-messages">
+            <div class="other-messages" :class="{dark: isActive}">
                 <span><a href="">History</a></span>
             </div>
         </div>
@@ -19,7 +19,23 @@
 
 <script>
 export default {
-    name: 'OthersComponent'
+    name: 'OthersComponent',
+    data() {
+    return {
+      isActive: false
+    };
+  },
+  computed: {
+    themeSitch(){
+      return this.isActive ? 'message a' : 'message-dark a';
+    }
+  },
+  mounted() {
+    this.$root.$on('toggle-style', (status) => {
+      this.isActive = status;
+    })
+  },
+  inject: ['toggleStyle'],
 }
 </script>
 
@@ -31,10 +47,14 @@ export default {
     margin-bottom: 10px;
     font-size: small;
 }
-.messages {
+#messages {
     border-radius: 5px;
     padding: 10px;
     background-color: white;
+    transition: background-color 0.5s ease;
+}
+#messages.dark {
+    background-color: #18263E;
 }
 .other-messages {
     display: flex;
@@ -45,5 +65,8 @@ export default {
 .other-messages a {
     text-decoration: none;
     color: black;
+}
+.other-messages.dark a {
+    color: white;
 }
 </style>
